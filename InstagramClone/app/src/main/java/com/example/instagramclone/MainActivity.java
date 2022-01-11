@@ -45,12 +45,8 @@ public class MainActivity extends AppCompatActivity {
 
     public static final String TAG = "MainActivity";
     final FragmentManager fragmentManager = getSupportFragmentManager();
-
-
-
     private BottomNavigationView bottomNavigationView;
 //    private SwipeRefreshLayout swipeContainer;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
