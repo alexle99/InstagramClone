@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -60,22 +61,25 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
         private TextView tvUsername;
         private ImageView ivImage;
         private TextView tvDescription;
+        private TextView tvDate;
 
         public ViewHolder (@NonNull View itemView){
             super(itemView);
             tvUsername = itemView.findViewById(R.id.tvUsername);
             ivImage = itemView.findViewById(R.id.ivImage);
             tvDescription = itemView.findViewById(R.id.tvDescription);
+            tvDate = itemView.findViewById(R.id.tvDate);
         }
 
         public void bind(Post post){
             // bind the post data to the view elements
-            tvDescription.setText(post.getDescription());
+            tvDescription.setText("\""+post.getDescription()+"\"");
             tvUsername.setText(post.getUser().getUsername());
             ParseFile image = post.getImage();
             if (image != null){
                 Glide.with(context).load(post.getImage().getUrl()).into(ivImage);
             }
+            tvDate.setText(post.getTime());
 
         }
     }
