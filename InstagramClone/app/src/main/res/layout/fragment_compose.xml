@@ -19,7 +19,8 @@
         android:id="@+id/btnCaptureImage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Take Picture" />
+        android:hint="Take Picture"
+        android:textColor="#FBF9F9" />
 
     <ImageView
         android:id="@+id/ivPostImage"
